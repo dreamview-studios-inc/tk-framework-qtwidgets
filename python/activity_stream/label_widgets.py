@@ -53,7 +53,7 @@ class LargeAttachmentThumbnail(ClickableLabel):
         ClickableLabel.__init__(self, parent)
         self._bundle = sgtk.platform.current_bundle()
         
-        # store shotgun data
+        # store sg data
         self._data = data
         
         if self._data["image"]:
@@ -168,7 +168,7 @@ class SmallAttachmentThumbnail(ClickableLabel):
 
 class UserThumbnail(ClickableLabel):
     """
-    Subclassed QLabel to represent a shotgun user.
+    Subclassed QLabel to represent a sg user.
     """
     
     # signal that fires on click
@@ -187,7 +187,7 @@ class UserThumbnail(ClickableLabel):
             
     def set_shotgun_data(self, sg_data):
         """
-        Set the shotgun data associated with this user
+        Set the sg data associated with this user
         
         :param sg_data: Shotgun user data
         """

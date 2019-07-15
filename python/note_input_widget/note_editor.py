@@ -24,7 +24,7 @@ class NoteEditor(QtGui.QTextEdit):
     """
         
     # internal role constant defining where the auto completer
-    # stores shotgun data
+    # stores sg data
     _SG_DATA_ROLE = QtCore.Qt.UserRole + 1
     
     def __init__(self, parent):
@@ -102,7 +102,7 @@ class NoteEditor(QtGui.QTextEdit):
         """
         Returns the linked items user has typed in via auto completer.
         
-        :returns: list of shotgun link dictionaries with name, type and id
+        :returns: list of sg link dictionaries with name, type and id
         """
         # first get the *html* contents of the editor
         html_content = self.toHtml()
@@ -181,7 +181,7 @@ class NoteEditor(QtGui.QTextEdit):
             if self.__sg_data_retriever:
                 self.__sg_data_retriever.clear()
             
-            # kick off async data request from shotgun
+            # kick off async data request from sg
             # we request to run an arbitrary method in the worker thread
             # this  _do_sg_global_search method will be called by the worker 
             # thread when the worker queue reaches that point and will 
@@ -345,7 +345,7 @@ class NoteEditor(QtGui.QTextEdit):
         # get the payload
         data = shotgun_model.get_sanitized_data(model_index, self._SG_DATA_ROLE)
 
-        # make sure that the user selected an actual shotgun item.
+        # make sure that the user selected an actual sg item.
         # if they just selected the "no items found" or "loading please hold"
         # items, just ignore it.
         if data is None:

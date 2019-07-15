@@ -11,7 +11,7 @@
 import sgtk
 from sgtk.platform.qt import QtCore, QtGui
  
-# import the shotgun_model and view modules from the shotgun utils framework
+# import the shotgun_model and view modules from the sg utils framework
 shotgun_model = sgtk.platform.import_framework("tk-framework-shotgunutils", "shotgun_model")
 
 from .ui.search_result_widget import Ui_SearchResultWidget

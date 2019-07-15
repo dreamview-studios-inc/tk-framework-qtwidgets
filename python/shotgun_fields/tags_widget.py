@@ -33,7 +33,7 @@ class TagsWidget(ElidedLabelBaseWidget):
         for tag in value:
             tag_strings.append(
                 "<img src='%s'>&nbsp;%s" % (
-                    ":/qtwidgets-shotgun-fields/tag.png", tag
+                    ":/qtwidgets-sg-fields/tag.png", tag
                 )
             )
 
@@ -81,7 +81,7 @@ class TagsEditorWidget(BubbleEditWidget):
         # create a bubble widget to display the tag
         tag_bubble = BubbleWidget()
         tag_bubble.set_data(tag)
-        tag_bubble.set_image(":/qtwidgets-shotgun-fields/tag.png")
+        tag_bubble.set_image(":/qtwidgets-sg-fields/tag.png")
         tag_bubble.set_text(tag)
         tag_bubble_id = self.add_bubble(tag_bubble)
 

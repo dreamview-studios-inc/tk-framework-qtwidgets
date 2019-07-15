@@ -218,7 +218,7 @@ class ReplyListWidget(QtGui.QWidget):
                                                                 attachment_req["attachment_group_id"], 
                                                                 attachment_req["attachment_data"])
             
-            # now go through the shotgun data
+            # now go through the sg data
             # for each reply, request a thumbnail.
             requested_items = []
             for item in replies_and_attachments:

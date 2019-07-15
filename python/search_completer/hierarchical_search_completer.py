@@ -33,7 +33,7 @@ class HierarchicalSearchCompleter(SearchCompleter):
     :model role: ``MODE_ROLE`` - Stores the mode of an item in the completion
         list (see modes above)
 
-    :model role: ``SG_DATA_ROLE`` - Role for storing shotgun data in the model
+    :model role: ``SG_DATA_ROLE`` - Role for storing sg data in the model
     """
 
     # path label, entity type, entity id, name, incremental path

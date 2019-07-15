@@ -27,7 +27,7 @@ class SearchCompleter(QtGui.QCompleter):
     :model role: ``MODE_ROLE`` - Stores the mode of an item in the completion
         list (see modes above)
 
-    :model role: ``SG_DATA_ROLE`` - Role for storing shotgun data in the model
+    :model role: ``SG_DATA_ROLE`` - Role for storing sg data in the model
 
     Derived classes are expected to implement the following methods:
         - :method:``_handle_search_results``
@@ -144,7 +144,7 @@ class SearchCompleter(QtGui.QCompleter):
         # clear thumbnail map
         self._thumb_map = {}
 
-        # kick off async data request from shotgun
+        # kick off async data request from sg
         # we request to run an arbitrary method in the worker thread
         # this  _do_sg_global_search method will be called by the worker
         # thread when the worker queue reaches that point and will

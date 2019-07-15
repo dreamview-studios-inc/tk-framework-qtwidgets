@@ -214,7 +214,7 @@ class ImageWidget(QtGui.QLabel):
 
         # menu display button for showing the popup menu
         self._popup_btn = QtGui.QPushButton(self)
-        self._popup_btn.setIcon(QtGui.QIcon(":/qtwidgets-shotgun-fields/image_menu.png"))
+        self._popup_btn.setIcon(QtGui.QIcon(":/qtwidgets-sg-fields/image_menu.png"))
         self._popup_btn.setFixedSize(QtCore.QSize(18, 12))
         self._popup_btn.hide()
 

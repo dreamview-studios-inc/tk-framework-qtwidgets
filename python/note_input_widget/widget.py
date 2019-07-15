@@ -42,7 +42,7 @@ class NoteInputWidget(QtGui.QWidget):
     _NEW_NOTE_WIDGET_INDEX = 1
     _ATTACHMENTS_WIDGET_INDEX = 2
     
-    # emitted when shotgun has been updated
+    # emitted when sg has been updated
     data_updated = QtCore.Signal()
     close_clicked = QtCore.Signal()
 
@@ -287,7 +287,7 @@ class NoteInputWidget(QtGui.QWidget):
         
     def _async_submit(self, sg, data):
         """
-        Actual payload for creating things in shotgun.
+        Actual payload for creating things in sg.
         Note: This runs in a different thread and cannot access
         any QT UI components.
         

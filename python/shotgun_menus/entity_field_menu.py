@@ -32,7 +32,7 @@ An example of how to use it is:
             self.setLayout(layout)
 
         def field_filter(self, field):
-            # display fields that are displayable by the shotgun field widgets
+            # display fields that are displayable by the sg field widgets
             return bool(self._field_manager.supported_fields("CustomEntity02", [field]))
 
         def open_menu(self, position):

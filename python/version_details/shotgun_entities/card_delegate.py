@@ -217,7 +217,7 @@ class ShotgunEntityCardDelegate(views.EditSelectedWidgetDelegate):
                               view related state of the cell.
         :type style_options:    :class:`~PySide.QtGui.QStyleOptionViewItem`
         """
-        # Get the shotgun query data for this model item.     
+        # Get the sg query data for this model item.
         sg_item = shotgun_model.get_sg_data(model_index)
         widget.entity = sg_item
 

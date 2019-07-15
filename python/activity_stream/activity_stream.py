@@ -35,7 +35,7 @@ class ActivityStreamWidget(QtGui.QWidget):
     :signal entity_requested(str, int): Fires when someone clicks an entity inside
             the activity stream. The returned parameters are entity type and entity id.
     :signal playback_requested(dict): Fires when someone clicks the playback url
-            on a version. Returns a shotgun dictionary with information
+            on a version. Returns a sg dictionary with information
             about the version.
     :signal entity_created(object): Fires when a Note or Reply entity is created by
             an underlying widget within the activity stream. Returns a Shotgun dictionary
@@ -503,11 +503,11 @@ class ActivityStreamWidget(QtGui.QWidget):
         self.ui.note_widget.set_current_entity(self._entity_type, 
                                                self._entity_id)
 
-        # to mimic the behavior in shotgun - which seems quite strange and
+        # to mimic the behavior in sg - which seems quite strange and
         # inconsistent for users, we need to disable to note dialog for 
         # these cases
 
-        # note - this may return [] if shotgun globals aren't yet cached
+        # note - this may return [] if sg globals aren't yet cached
         schema_fields = shotgun_globals.get_entity_fields(self._entity_type)
         is_non_project_entity_type = len(schema_fields) > 0 and "project" not in schema_fields
 
@@ -651,7 +651,7 @@ class ActivityStreamWidget(QtGui.QWidget):
         self._bundle.log_debug("...done")
         
         # and now request an update check
-        self._bundle.log_debug("Ask db manager to ask shotgun for updates...")
+        self._bundle.log_debug("Ask db manager to ask sg for updates...")
         self._data_manager.rescan()
         self._bundle.log_debug("...done")
 
@@ -1123,7 +1123,7 @@ class ActivityStreamWidget(QtGui.QWidget):
 
     def _load_shotgun_activity_stream(self):
         """
-        Called when someone clicks 'show activity stream in shotgun'
+        Called when someone clicks 'show activity stream in sg'
         """
         url = "%s/detail/%s/%s" % (self._bundle.sgtk.shotgun_url, self._entity_type, self._entity_id)
         QtGui.QDesktopServices.openUrl(QtCore.QUrl(url))

@@ -332,7 +332,7 @@ class ShotgunFieldManager(QtCore.QObject):
                 start_processing=True
             )
 
-        # let shotgun globals start loading the schema
+        # let sg globals start loading the schema
         shotgun_globals.register_bg_task_manager(self._task_manager)
         shotgun_globals.run_on_schema_loaded(self.__schema_loaded)
         self._initialized = True

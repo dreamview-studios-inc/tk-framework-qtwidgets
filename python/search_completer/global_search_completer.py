@@ -35,10 +35,10 @@ class GlobalSearchCompleter(SearchCompleter):
     :model role: ``MODE_ROLE`` - Stores the mode of an item in the completion
         list (see modes above)
 
-    :model role: ``SG_DATA_ROLE`` - Role for storing shotgun data in the model
+    :model role: ``SG_DATA_ROLE`` - Role for storing sg data in the model
     """
 
-    # emitted when shotgun has been updated
+    # emitted when sg has been updated
     entity_selected = QtCore.Signal(str, int)
     entity_activated = QtCore.Signal(str, int, str)
 
@@ -75,7 +75,7 @@ class GlobalSearchCompleter(SearchCompleter):
         :rtype: :obj:`dict`: or ``None``
         """
 
-        # make sure that the user selected an actual shotgun item.
+        # make sure that the user selected an actual sg item.
         # if they just selected the "no items found" or "loading please hold"
         # items, just ignore it.
         mode = shotgun_model.get_sanitized_data(model_index, self.MODE_ROLE)
@@ -95,7 +95,7 @@ class GlobalSearchCompleter(SearchCompleter):
             #  'id': 99}
 
             # NOTE: this data format differs from what is typically returned by
-            # the shotgun python-api. this data may be formalized at some point
+            # the sg python-api. this data may be formalized at some point
             # but for now, only expose the minimum information.
 
             return {

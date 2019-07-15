@@ -21,14 +21,14 @@ class ShotgunPlaybackLabel(QtGui.QLabel):
     this label with text based content, we strongly recommend
     using it with a pixmap. Typically this is a Shotgun thumbnail.    
     
-    By populating an instance with shotgun version data
+    By populating an instance with sg version data
     via the :meth:`set_shotgun_data()` method, the label
     will look at the data and determine whether a playback 
     icon should be displayed or not. In the case an icon is
     displayed, a playback_clicked signal may be emitted. 
     
     :signal playback_clicked(dict): The playback icon was clicked. 
-        This signal passes the shotgun version data specified in
+        This signal passes the sg version data specified in
         via the :meth:`set_shotgun_data()` method back
         to the caller.   
     """
@@ -52,7 +52,7 @@ class ShotgunPlaybackLabel(QtGui.QLabel):
 
     def set_shotgun_data(self, sg_data):
         """
-        Sets shotgun data associated with this label.
+        Sets sg data associated with this label.
         This data will be used to drive the logic which is
         used to determine if the label should exhibit the playback icon or not.
         

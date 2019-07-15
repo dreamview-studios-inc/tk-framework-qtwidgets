@@ -74,7 +74,7 @@ class FileLinkWidget(ElidedLabelBaseWidget):
         self._editable = False
 
         self._popup_btn = QtGui.QPushButton(self)
-        self._popup_btn.setIcon(QtGui.QIcon(":/qtwidgets-shotgun-fields/link_menu.png"))
+        self._popup_btn.setIcon(QtGui.QIcon(":/qtwidgets-sg-fields/link_menu.png"))
         self._popup_btn.setFixedSize(QtCore.QSize(18, 12))
         self._popup_btn.hide()
 
@@ -308,7 +308,7 @@ class FileLinkWidget(ElidedLabelBaseWidget):
         utils = self._bundle.import_module("utils")
         if value["link_type"] in ["web", "upload"]:
             url = value["url"]
-            img_src = ":/qtwidgets-shotgun-fields/link_%s.png" % (value["link_type"],)
+            img_src = ":/qtwidgets-sg-fields/link_%s.png" % (value["link_type"],)
             hyperlink = utils.get_hyperlink_html(url, value.get("name", url))
             str_val = "<span><img src='%s'>&nbsp;%s</span>" % (img_src, hyperlink)
         elif value["link_type"] == "local":
@@ -317,7 +317,7 @@ class FileLinkWidget(ElidedLabelBaseWidget):
             # result in the display of the full path rather than just the
             # file basename.ext (the SG behavior).
             file_name = os.path.split(local_path)[-1]
-            img_src = ":/qtwidgets-shotgun-fields/link_%s.png" % (value["link_type"],)
+            img_src = ":/qtwidgets-sg-fields/link_%s.png" % (value["link_type"],)
             hyperlink = utils.get_hyperlink_html(local_path, file_name)
             str_val = "<span><img src='%s'>&nbsp;%s</span>" % (img_src, hyperlink)
         else:

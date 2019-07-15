@@ -24,7 +24,7 @@ shotgun_model = sgtk.platform.import_framework(
 
 class ShotgunFieldDelegateGeneric(views.WidgetDelegate):
     """
-    A generic, model-agnostic, shotgun field widget delegate.
+    A generic, model-agnostic, sg field widget delegate.
 
     This class is designed to be used with any model that represents data that
     can be stored in Shotgun fields.
@@ -47,10 +47,10 @@ class ShotgunFieldDelegateGeneric(views.WidgetDelegate):
         :param field_name: Shotgun field name
         :type field_name: String
 
-        :param display_class: A shotgun field :class:`~PySide.QtGui.QWidget` to
+        :param display_class: A sg field :class:`~PySide.QtGui.QWidget` to
             display the field info
 
-        :param editor_class: A shotgun field :class:`~PySide.QtGui.QWidget` to
+        :param editor_class: A sg field :class:`~PySide.QtGui.QWidget` to
             edit the field info
 
         :param view: The parent view for this delegate
@@ -393,10 +393,10 @@ class ShotgunFieldDelegate(ShotgunFieldDelegateGeneric):
         :param field_name: Shotgun field name
         :type field_name: String
 
-        :param display_class: A shotgun field :class:`~PySide.QtGui.QWidget` to
+        :param display_class: A sg field :class:`~PySide.QtGui.QWidget` to
             display the field info
 
-        :param editor_class: A shotgun field :class:`~PySide.QtGui.QWidget` to
+        :param editor_class: A sg field :class:`~PySide.QtGui.QWidget` to
             edit the field info
 
         :param view: The parent view for this delegate

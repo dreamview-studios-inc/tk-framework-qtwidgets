@@ -31,7 +31,7 @@ class GlobalSearchWidget(ShotgunSearchWidget):
         the addition of the ``name`` of the activated entity being supplied.
     """
 
-    # emitted when shotgun has been updated
+    # emitted when sg has been updated
     entity_selected = QtCore.Signal(str, int)
     entity_activated = QtCore.Signal(str, int, str)
 

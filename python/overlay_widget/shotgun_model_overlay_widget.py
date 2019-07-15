@@ -19,7 +19,7 @@ class ShotgunModelOverlayWidget(ShotgunOverlayWidget):
     :class:`~tk-framework-shotgunutils:shotgun_model.ShotgunModel`.
     
     By using this class, multiple overlay widgets can be
-    easily created and connected to the same shotgun model.
+    easily created and connected to the same sg model.
     """
 
     def __init__(self, sg_model, parent=None):

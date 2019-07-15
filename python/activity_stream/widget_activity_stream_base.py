@@ -204,7 +204,7 @@ class ActivityStreamBaseWidget(QtGui.QWidget):
                      
     def __generate_url(self, entity_type, entity_id, name):
         """
-        Generate a standard shotgun url
+        Generate a standard sg url
         """
         utils = self._bundle.import_module("utils")
         return utils.get_hyperlink_html(

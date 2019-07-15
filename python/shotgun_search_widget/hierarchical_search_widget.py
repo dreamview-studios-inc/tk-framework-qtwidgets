@@ -29,7 +29,7 @@ class HierarchicalSearchWidget(ShotgunSearchWidget):
         ``type`` and ``id`` will be ``None``.
     """
 
-    # emitted when shotgun has been updated
+    # emitted when sg has been updated
     node_activated = QtCore.Signal(str, int, str, str, list)
 
     def __init__(self, parent):

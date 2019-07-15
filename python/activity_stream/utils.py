@@ -69,7 +69,7 @@ def create_rectangular_256x144_thumbnail(image):
 
 def __create_rounded_rect_thumbnail(image, canvas_width, canvas_height, radius):
     """
-    Given a qimage shotgun thumbnail, create a publish icon
+    Given a qimage sg thumbnail, create a publish icon
     with the thumbnail composited onto a centered otherwise empty canvas.
     The thumbnail will be taking up all the space in the image.
     

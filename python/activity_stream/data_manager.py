@@ -86,7 +86,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
     # available.
     PLACEHOLDER_THUMBNAIL_HASHSUM = "d730702c967dcad5347efe885f0bd4344f6c568e"
     
-    # max number of items to pull from shotgun
+    # max number of items to pull from sg
     # typically the updates are incremental and hence smaller
     MAX_ITEMS_TO_GET_FROM_SG = 300
     
@@ -340,7 +340,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
             else:
                 highest_id = max(self._activity_data.keys())
             
-            # kick off async data request from shotgun 
+            # kick off async data request from sg
             data = {"entity_type": self._entity_type,
                     "entity_id": self._entity_id,
                     "highest_id": highest_id
@@ -353,7 +353,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
         """
         Returns the data for a given activity id,
         
-        :returns: raw shotgun activity data dictionary or none 
+        :returns: raw sg activity data dictionary or none
                   if the data has not been cached.
         """
         return self._activity_data.get(activity_id)
@@ -362,7 +362,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
         """
         Returns the note data for a given note id
 
-        :returns: raw shotgun activity data dictionary or none 
+        :returns: raw sg activity data dictionary or none
                   if the data has not been cached.
         
         """
@@ -391,7 +391,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
         
     def request_attachment_thumbnail(self, activity_id, attachment_group_id, sg_data):
         """
-        Given shotgun data for an attachment, schedule a thumbnail 
+        Given sg data for an attachment, schedule a thumbnail
         download. 
 
         :param activity_id: activity id
@@ -559,7 +559,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
         :param connection: Database connection (coming from the decorator)
         :param cursor: Database cursor (coming from the decorator)
         :param note_id: Note id to load data for
-        :returns: shotgun data dictionary
+        :returns: sg data dictionary
         """
         note_data = None
         try:
@@ -785,7 +785,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
         
     def _get_activity_stream(self, sg, data):
         """
-        Actual payload for getting actity stream data from shotgun
+        Actual payload for getting actity stream data from sg
         Note: This runs in a different thread and cannot access
         any QT UI components.
         
@@ -932,7 +932,7 @@ class ActivityStreamDataHandler(QtCore.QObject):
                     note_id = update["primary_entity"]["id"]
                     self._bundle.log_debug("Requesting note thread download "
                                         "for note %s" % note_id)
-                    # kick off async data request from shotgun 
+                    # kick off async data request from sg
                     data = {"note_id": note_id }
                     self._bundle.log_debug("Requesting async data for note id %s" % note_id)
                     note_uid = self._sg_data_retriever.execute_method(self._get_note_thread, data)        

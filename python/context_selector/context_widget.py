@@ -82,7 +82,7 @@ class ContextWidget(QtGui.QWidget):
         self._context = None
 
         # also keep a handle on the task manager used by completer and for
-        # querying shotgun in the bg
+        # querying sg in the bg
         self._task_manager = None
 
         # menu for recent and user contexts
@@ -295,7 +295,7 @@ class ContextWidget(QtGui.QWidget):
 
         # we need to limit the search completer to entity types that are valid
         # for ``PublishedFile.entity`` field links. To do this, query the
-        # shotgun schema to get a list of these entity types. We use the current
+        # sg schema to get a list of these entity types. We use the current
         # project schema if we're in a project. We do this as a background query
         # via the supplied task manager.
 
@@ -320,7 +320,7 @@ class ContextWidget(QtGui.QWidget):
         and review.
 
         This method will look at the given link field (e.g. ``PublishedFile.entity``)
-        and inspect the shotgun schema to see which entity types are valid connections
+        and inspect the sg schema to see which entity types are valid connections
         to this field (e.g. in this example which entity types can you can associate
         a publish with) and those types will appear in the list of items shown by the
         auto completer.
@@ -328,7 +328,7 @@ class ContextWidget(QtGui.QWidget):
         This is useful when you want to use the context widget in conjunction with
         workflows related to for example publishes, versions or notes and you want to
         restrict the entities displayed by the auto completer to the ones that have been
-        configured in the shotgun site schema to be able to associate with the given type.
+        configured in the sg site schema to be able to associate with the given type.
 
         :param str entity_type: Entity type to restrict based on
         :param str field_name: Shotgun field to restrict based on

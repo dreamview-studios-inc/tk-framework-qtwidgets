@@ -220,7 +220,7 @@ class ShotgunFieldNotEditable(QtGui.QWidget):
         # this is the "no edit" label that will show on hover
         self._no_edit_lbl = QtGui.QLabel(self)
         self._no_edit_lbl.setPixmap(
-            QtGui.QPixmap(":/qtwidgets-shotgun-fields/not_editable.png"))
+            QtGui.QPixmap(":/qtwidgets-sg-fields/not_editable.png"))
         self._no_edit_lbl.setFixedSize(QtCore.QSize(16, 16))
         self._no_edit_lbl.hide()
 
@@ -295,7 +295,7 @@ class _DisplayWidget(QtGui.QWidget):
         self._display_widget = display_widget
 
         self._edit_btn = QtGui.QPushButton()
-        self._edit_btn.setIcon(QtGui.QIcon(":/qtwidgets-shotgun-fields/edit_field.png"))
+        self._edit_btn.setIcon(QtGui.QIcon(":/qtwidgets-sg-fields/edit_field.png"))
         self._edit_btn.setFixedSize(QtCore.QSize(16, 16))
         self._edit_btn.setFocusPolicy(QtCore.Qt.NoFocus)
         self._edit_btn.hide()
@@ -383,12 +383,12 @@ class _EditorWidget(QtGui.QWidget):
         self._editor_widget.setFocusPolicy(QtCore.Qt.StrongFocus)
 
         self._done_btn = QtGui.QPushButton()
-        self._done_btn.setIcon(QtGui.QIcon(":/qtwidgets-shotgun-fields/edit_close.png"))
+        self._done_btn.setIcon(QtGui.QIcon(":/qtwidgets-sg-fields/edit_close.png"))
         self._done_btn.setFixedSize(QtCore.QSize(16, 16))
         self._done_btn.setFocusPolicy(QtCore.Qt.NoFocus)
 
         self._apply_btn = QtGui.QPushButton()
-        self._apply_btn.setIcon(QtGui.QIcon(":/qtwidgets-shotgun-fields/apply_value.png"))
+        self._apply_btn.setIcon(QtGui.QIcon(":/qtwidgets-sg-fields/apply_value.png"))
         self._apply_btn.setFixedSize(QtCore.QSize(16, 16))
         self._apply_btn.setFocusPolicy(QtCore.Qt.NoFocus)
 
